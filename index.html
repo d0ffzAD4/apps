@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="theme-color" content="#2f6022" />
+  <title>Área de Membros · Salada de Mão</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --verde:#4a8c3a;--verde-esc:#2f6022;--verde-bem:#e9f1dc;--verde-cla:#d8e8c8;
+      --areia:#faf6ed;--creme:#fefcf6;--bege:#f3ecdc;
+      --texto:#1f1d18;--texto-2:#4a463a;--texto-3:#8a8270;
+      --borda:#e3dcc8;--sombra:rgba(47,96,34,.1);
+      --amarelo:#f5c842;--laranja:#e87e2e;
+    }
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'DM Sans',sans-serif;background:var(--creme);color:var(--texto);
+      line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;
+      padding-bottom:80px;
+    }
+    h1,h2,h3{font-family:'Lora',serif;color:var(--texto);line-height:1.3}
+
+    /* TOPO */
+    .topo{
+      background:var(--verde-esc);color:#fff;padding:14px 22px;
+      display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:50;
+      box-shadow:0 2px 12px rgba(0,0,0,.08);
+    }
+    .topo-logo{display:flex;align-items:center;gap:10px}
+    .topo-logo img{height:36px;width:36px;border-radius:50%;background:#fff;padding:3px}
+    .topo-logo span{font-family:'Lora',serif;font-weight:700;font-size:1.05rem}
+    .btn-sair{
+      background:rgba(255,255,255,.15);color:#fff;border:0;padding:8px 14px;
+      border-radius:8px;font-family:inherit;font-weight:600;font-size:.85rem;
+      cursor:pointer;transition:background .2s;
+    }
+    .btn-sair:hover{background:rgba(255,255,255,.28)}
+
+    /* BOAS-VINDAS */
+    .welcome{
+      background:linear-gradient(180deg,var(--verde-bem),var(--areia));
+      padding:34px 22px 28px;text-align:center;border-bottom:1px solid var(--borda);
+    }
+    .welcome h1{font-size:1.65rem;color:var(--verde-esc);margin-bottom:6px;font-weight:700}
+    .welcome p{color:var(--texto-2);font-size:.98rem;max-width:520px;margin:0 auto}
+
+    /* TABS */
+    .tabs-wrap{
+      background:#fff;border-bottom:1px solid var(--borda);
+      position:sticky;top:64px;z-index:40;
+    }
+    .tabs{
+      max-width:1080px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;
+    }
+    .tabs::-webkit-scrollbar{display:none}
+    .tab{
+      flex:1 0 auto;min-width:fit-content;padding:14px 22px;background:none;border:0;
+      font-family:inherit;font-size:.95rem;font-weight:600;color:var(--texto-3);
+      cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;
+      display:flex;align-items:center;gap:8px;justify-content:center;white-space:nowrap;
+    }
+    .tab:hover{color:var(--verde-esc)}
+    .tab.active{color:var(--verde-esc);border-bottom-color:var(--verde)}
+    .tab .icon{font-size:1.05rem}
+
+    /* CONTAINER */
+    main{max-width:1080px;margin:0 auto;padding:30px 22px}
+    .painel{display:none;animation:fade .35s ease}
+    .painel.active{display:block}
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+    .sec-head{margin-bottom:24px}
+    .sec-head h2{font-size:1.5rem;color:var(--verde-esc);margin-bottom:4px}
+    .sec-head p{color:var(--texto-3);font-size:.92rem}
+
+    /* BUSCA */
+    .busca-wrap{margin-bottom:22px;position:relative}
+    .busca{
+      width:100%;padding:13px 16px 13px 44px;border:1.5px solid var(--borda);
+      border-radius:10px;font-size:.95rem;font-family:inherit;background:#fff;
+      transition:border-color .2s;
+    }
+    .busca:focus{outline:none;border-color:var(--verde)}
+    .busca-ico{
+      position:absolute;left:14px;top:50%;transform:translateY(-50%);
+      color:var(--texto-3);pointer-events:none;
+    }
+
+    /* GRID DE CARDS */
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+      gap:18px;
+    }
+    .card{
+      background:#fff;border:1px solid var(--borda);border-radius:14px;
+      overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;
+      display:flex;flex-direction:column;
+    }
+    .card:hover{transform:translateY(-3px);box-shadow:0 10px 28px var(--sombra)}
+    .card-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--bege);display:block}
+    .card-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column}
+    .card-titulo{font-family:'Lora',serif;font-weight:600;font-size:1.02rem;color:var(--texto);margin-bottom:4px;line-height:1.3}
+    .card-meta{font-size:.82rem;color:var(--texto-3);display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+    .card-meta span{display:inline-flex;align-items:center;gap:4px}
+    .badge{
+      background:var(--verde-bem);color:var(--verde-esc);padding:3px 9px;
+      border-radius:20px;font-size:.72rem;font-weight:600;letter-spacing:.02em;
+    }
+    .badge-laranja{background:#fce6d4;color:var(--laranja)}
+    .badge-amarelo{background:#fdf3c4;color:#a07b00}
+
+    /* CARDS HORIZONTAIS (bônus/outros) */
+    .grid-bonus{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+
+    /* Botão Voltar (subview de bônus) */
+    .voltar-btn{
+      display:inline-flex;align-items:center;gap:6px;
+      background:transparent;border:1.5px solid var(--borda);color:var(--verde-esc);
+      padding:8px 16px 8px 12px;border-radius:8px;cursor:pointer;
+      font-family:inherit;font-weight:600;font-size:.88rem;margin-bottom:18px;
+      transition:background .2s,border-color .2s;
+    }
+    .voltar-btn:hover{background:var(--verde-bem);border-color:var(--verde)}
+    .voltar-btn::before{content:'‹';font-size:1.3rem;line-height:1;font-weight:700}
+    .bonus{
+      background:#fff;border:1px solid var(--borda);border-radius:14px;
+      overflow:hidden;display:flex;flex-direction:column;cursor:pointer;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .bonus:hover{transform:translateY(-3px);box-shadow:0 10px 28px var(--sombra)}
+    .bonus-img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--bege)}
+    .bonus-body{padding:18px 20px}
+    .bonus-body h3{font-size:1.08rem;color:var(--verde-esc);margin-bottom:6px;font-family:'Lora',serif}
+    .bonus-body p{color:var(--texto-2);font-size:.9rem;line-height:1.55}
+    .bonus-btn{
+      margin-top:14px;display:inline-block;background:var(--verde-esc);color:#fff;
+      padding:9px 16px;border-radius:8px;text-decoration:none;font-size:.85rem;
+      font-weight:600;transition:background .2s;border:0;font-family:inherit;cursor:pointer;
+    }
+    .bonus-btn:hover{background:var(--verde)}
+    .bonus-btn.disabled{background:var(--texto-3);cursor:not-allowed}
+
+    /* MODAL */
+    .modal-bg{
+      display:none;position:fixed;inset:0;background:rgba(20,30,15,.65);
+      z-index:100;align-items:flex-start;justify-content:center;padding:40px 18px;
+      overflow-y:auto;animation:fadeBg .25s;
+    }
+    .modal-bg.open{display:flex}
+    @keyframes fadeBg{from{opacity:0}to{opacity:1}}
+    .modal{
+      background:#fff;border-radius:18px;max-width:680px;width:100%;
+      box-shadow:0 25px 70px rgba(0,0,0,.3);overflow:hidden;
+      animation:popIn .35s cubic-bezier(.2,.9,.3,1.2);
+    }
+    @keyframes popIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+    .modal-hero{position:relative;width:100%;aspect-ratio:16/9;background:var(--bege)}
+    .modal-hero img{width:100%;height:100%;object-fit:cover;display:block}
+    .modal-close{
+      position:absolute;top:12px;right:12px;width:38px;height:38px;
+      background:rgba(0,0,0,.55);color:#fff;border:0;border-radius:50%;
+      cursor:pointer;font-size:1.3rem;line-height:1;font-family:inherit;
+      transition:background .2s;
+    }
+    .modal-close:hover{background:rgba(0,0,0,.85)}
+    .modal-body{padding:26px 28px 32px}
+    .modal-body h2{font-size:1.45rem;color:var(--verde-esc);margin-bottom:8px}
+    .modal-meta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px;font-size:.85rem;color:var(--texto-3)}
+    .modal-meta span{display:inline-flex;align-items:center;gap:5px}
+    .modal-section{margin-top:22px}
+    .modal-section h3{
+      font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;
+      color:var(--verde-esc);font-weight:700;margin-bottom:12px;font-family:'DM Sans',sans-serif;
+    }
+    .modal-section ul{list-style:none;padding:0}
+    .modal-section li{
+      padding:8px 0 8px 26px;position:relative;font-size:.95rem;color:var(--texto-2);
+      border-bottom:1px dashed var(--borda);line-height:1.55;
+    }
+    .modal-section li:last-child{border-bottom:0}
+    .modal-section ul.ingredientes li::before{
+      content:"";position:absolute;left:0;top:14px;width:14px;height:14px;
+      border:2px solid var(--verde);border-radius:50%;
+    }
+    .modal-section ol{list-style:none;padding:0;counter-reset:passo}
+    .modal-section ol li{
+      counter-increment:passo;padding:10px 0 10px 38px;position:relative;
+      font-size:.95rem;color:var(--texto-2);line-height:1.6;border-bottom:1px dashed var(--borda);
+    }
+    .modal-section ol li:last-child{border-bottom:0}
+    .modal-section ol li::before{
+      content:counter(passo);position:absolute;left:0;top:9px;
+      background:var(--verde);color:#fff;width:26px;height:26px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;font-size:.82rem;
+      font-weight:700;font-family:'DM Sans',sans-serif;
+    }
+
+    /* VIDEO PLAYER MODAL */
+    .modal-video{
+      width:100%;aspect-ratio:9/16;max-height:80vh;background:#000;
+      display:block;margin:0 auto;
+    }
+
+    /* EMPTY STATE */
+    .vazio{
+      text-align:center;padding:60px 22px;color:var(--texto-3);
+    }
+    .vazio-ico{font-size:3rem;margin-bottom:12px;opacity:.6}
+
+    /* MOBILE */
+    @media (max-width:640px){
+      .welcome h1{font-size:1.35rem}
+      .tabs-wrap{top:64px}
+      .tab{padding:12px 14px;font-size:.85rem}
+      .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+      .grid-bonus{grid-template-columns:1fr}
+      main{padding:22px 16px}
+      .modal-body{padding:22px 20px 26px}
+      .modal-body h2{font-size:1.2rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPO -->
+  <header class="topo">
+    <div class="topo-logo">
+      <img src="../images/logo.jpg" alt="logo" />
+      <span>Salada de Mão</span>
+    </div>
+    <button class="btn-sair" id="btn-sair" type="button">Sair</button>
+  </header>
+
+  <!-- BOAS-VINDAS -->
+  <section class="welcome">
+    <h1>Bem-vinda à sua área de membros!</h1>
+    <p>Aqui você acessa todas as receitas, molhos especiais, bônus e materiais extras do programa.</p>
+  </section>
+
+  <!-- TABS -->
+  <nav class="tabs-wrap">
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="receitas" role="tab"><span class="icon">🥗</span> Receitas</button>
+      <button class="tab" data-tab="molhos" role="tab"><span class="icon">🥄</span> Molhos</button>
+      <button class="tab" data-tab="bonus" role="tab"><span class="icon">🎁</span> Bônus</button>
+      <button class="tab" data-tab="outros" role="tab"><span class="icon">📦</span> Outros</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- RECEITAS -->
+    <section class="painel active" id="painel-receitas">
+      <div class="sec-head">
+        <h2>Suas receitas</h2>
+        <p>Clique em qualquer receita pra ver ingredientes e modo de preparo completo.</p>
+      </div>
+      <div class="busca-wrap">
+        <svg class="busca-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="busca-receitas" class="busca" placeholder="Buscar receita... (ex: caesar, mediterrânea)" />
+      </div>
+      <div class="grid" id="grid-receitas"></div>
+    </section>
+
+    <!-- MOLHOS -->
+    <section class="painel" id="painel-molhos">
+      <div class="sec-head">
+        <h2>Molhos especiais</h2>
+        <p>Três molhos coringa que transformam qualquer salada — caseiros e fáceis.</p>
+      </div>
+      <div class="grid" id="grid-molhos"></div>
+    </section>
+
+    <!-- BÔNUS -->
+    <section class="painel" id="painel-bonus">
+      <div class="sec-head">
+        <h2>Seus bônus exclusivos</h2>
+        <p>4 materiais extras inclusos no seu acesso — sem custo adicional.</p>
+      </div>
+      <div class="grid-bonus" id="grid-bonus"></div>
+    </section>
+
+    <!-- OUTROS -->
+    <section class="painel" id="painel-outros">
+      <div class="sec-head">
+        <h2>Outros materiais</h2>
+        <p>Conteúdos extras pra você aproveitar ao máximo o programa.</p>
+      </div>
+      <div class="grid-bonus" id="grid-outros"></div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-bg" id="modal-bg" role="dialog" aria-modal="true">
+    <div class="modal" id="modal-content"></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    // ===== Auth guard =====
+    if (sessionStorage.getItem("sm_auth") !== "1") {
+      location.replace("login.html");
+    }
+    document.getElementById("btn-sair").addEventListener("click", () => {
+      sessionStorage.removeItem("sm_auth");
+      location.replace("login.html");
+    });
+
+    // ===== Tabs =====
+    const tabs = document.querySelectorAll(".tab");
+    const paineis = document.querySelectorAll(".painel");
+    tabs.forEach(t => t.addEventListener("click", () => {
+      tabs.forEach(x => x.classList.remove("active"));
+      paineis.forEach(x => x.classList.remove("active"));
+      t.classList.add("active");
+      document.getElementById("painel-" + t.dataset.tab).classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }));
+
+    // ===== Modal helpers =====
+    const modalBg = document.getElementById("modal-bg");
+    const modalContent = document.getElementById("modal-content");
+
+    function abrirModal(html) {
+      modalContent.innerHTML = html;
+      modalBg.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function fecharModal() {
+      modalBg.classList.remove("open");
+      document.body.style.overflow = "";
+      modalContent.innerHTML = "";
+    }
+    modalBg.addEventListener("click", (e) => { if (e.target === modalBg) fecharModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") fecharModal(); });
+
+    function escapeHTML(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+    }
+
+    // ===== Receitas =====
+    const gridReceitas = document.getElementById("grid-receitas");
+    function renderReceitas(filtro = "") {
+      const f = filtro.trim().toLowerCase();
+      const lista = SM_DATA.receitas.filter(r => !f || r.nome.toLowerCase().includes(f));
+      if (lista.length === 0) {
+        gridReceitas.innerHTML = `<div class="vazio" style="grid-column:1/-1"><div class="vazio-ico">🔍</div>Nenhuma receita encontrada para "${escapeHTML(filtro)}".</div>`;
+        return;
+      }
+      gridReceitas.innerHTML = lista.map((r, i) => `
+        <article class="card" data-tipo="receita" data-idx="${SM_DATA.receitas.indexOf(r)}">
+          <img src="${escapeHTML(r.img)}" alt="${escapeHTML(r.nome)}" class="card-img" loading="lazy" />
+          <div class="card-body">
+            <div class="card-titulo">${escapeHTML(r.nome)}</div>
+            <div class="card-meta">
+              <span class="badge">${r.kcal} kcal</span>
+              <span>⏱ ${escapeHTML(r.tempo)}</span>
+              <span>🥣 ${escapeHTML(r.porcoes)}</span>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+    renderReceitas();
+    document.getElementById("busca-receitas").addEventListener("input", e => renderReceitas(e.target.value));
+
+    // ===== Molhos =====
+    function renderMolhos() {
+      document.getElementById("grid-molhos").innerHTML = SM_DATA.molhos.map((m, i) => `
+        <article class="card" data-tipo="molho" data-idx="${i}">
+          <img src="${escapeHTML(m.img)}" alt="${escapeHTML(m.nome)}" class="card-img" loading="lazy" />
+          <div class="card-body">
+            <div class="card-titulo">${escapeHTML(m.nome)}</div>
+            <div class="card-meta"><span class="badge badge-amarelo">Receita do molho</span></div>
+          </div>
+        </article>
+      `).join("");
+    }
+    renderMolhos();
+
+    // ===== Bônus =====
+    const painelBonus = document.getElementById("painel-bonus");
+    function renderBonus() {
+      painelBonus.innerHTML = `
+        <div class="sec-head">
+          <h2>Seus bônus exclusivos</h2>
+          <p>4 materiais extras inclusos no seu acesso — sem custo adicional.</p>
+        </div>
+        <div class="grid-bonus" id="grid-bonus"></div>
+      `;
+      document.getElementById("grid-bonus").innerHTML = SM_DATA.bonus.map((b, i) => {
+        const total = (SM_DATA[b.categoria] || []).length;
+        return `
+        <article class="bonus" data-tipo="bonus" data-idx="${i}">
+          <img src="${escapeHTML(b.img)}" alt="${escapeHTML(b.titulo)}" class="bonus-img" loading="lazy" />
+          <div class="bonus-body">
+            <h3>${escapeHTML(b.titulo)}</h3>
+            <p>${escapeHTML(b.desc)}</p>
+            <button class="bonus-btn" type="button">Acessar ${total} ${total === 1 ? 'item' : 'itens'} →</button>
+          </div>
+        </article>
+      `;}).join("");
+    }
+    renderBonus();
+
+    // Subview de um bônus específico (mostra grid com smoothies/águas/shots/listas)
+    function abrirSubviewBonus(b) {
+      const itens = SM_DATA[b.categoria] || [];
+      const isLista = b.categoria === "listas";
+      painelBonus.innerHTML = `
+        <button class="voltar-btn" id="btn-voltar-bonus" type="button">Voltar aos bônus</button>
+        <div class="sec-head">
+          <h2 style="color:${escapeHTML(b.cor)}">${escapeHTML(b.titulo)}</h2>
+          <p>${escapeHTML(b.desc)}</p>
+        </div>
+        <div class="busca-wrap">
+          <svg class="busca-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="busca-sub" class="busca" placeholder="Buscar..." />
+        </div>
+        <div class="grid" id="grid-sub"></div>
+      `;
+      function renderSub(filtro = "") {
+        const f = filtro.trim().toLowerCase();
+        const lista = itens.filter(r => !f || r.nome.toLowerCase().includes(f));
+        const gridSub = document.getElementById("grid-sub");
+        if (lista.length === 0) {
+          gridSub.innerHTML = `<div class="vazio" style="grid-column:1/-1"><div class="vazio-ico">🔍</div>Nada encontrado.</div>`;
+          return;
+        }
+        gridSub.innerHTML = lista.map(r => {
+          const i = itens.indexOf(r);
+          return `
+            <article class="card" data-tipo="subitem" data-cat="${escapeHTML(b.categoria)}" data-idx="${i}">
+              <img src="${escapeHTML(r.img)}" alt="${escapeHTML(r.nome)}" class="card-img" loading="lazy" />
+              <div class="card-body">
+                <div class="card-titulo">${escapeHTML(r.nome)}</div>
+                <div class="card-meta">
+                  ${r.kcal ? `<span class="badge">${r.kcal} kcal</span>` : `<span class="badge badge-laranja">${isLista ? 'Lista' : 'Receita'}</span>`}
+                  <span>⏱ ${escapeHTML(r.tempo)}</span>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join("");
+      }
+      renderSub();
+      document.getElementById("busca-sub").addEventListener("input", e => renderSub(e.target.value));
+      document.getElementById("btn-voltar-bonus").addEventListener("click", renderBonus);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // ===== Outros =====
+    function renderOutros() {
+      document.getElementById("grid-outros").innerHTML = SM_DATA.outros.map((o, i) => {
+        const ativo = !!o.link;
+        return `
+          <article class="bonus" data-tipo="outros" data-idx="${i}" ${ativo ? "" : 'style="opacity:.6"'}>
+            <img src="${escapeHTML(o.img)}" alt="${escapeHTML(o.titulo)}" class="bonus-img" loading="lazy" />
+            <div class="bonus-body">
+              <h3>${escapeHTML(o.titulo)}</h3>
+              <p>${escapeHTML(o.desc)}</p>
+              <button class="bonus-btn ${ativo ? "" : "disabled"}" type="button" ${ativo ? "" : "disabled"}>${escapeHTML(o.acao)}</button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+    renderOutros();
+
+    // ===== Click delegation: abrir modais =====
+    document.addEventListener("click", (e) => {
+      const card = e.target.closest("[data-tipo]");
+      if (!card) return;
+      const tipo = card.dataset.tipo;
+      const idx = parseInt(card.dataset.idx, 10);
+
+      if (tipo === "receita") {
+        const r = SM_DATA.receitas[idx];
+        abrirModal(`
+          <div class="modal-hero">
+            <img src="${escapeHTML(r.img)}" alt="${escapeHTML(r.nome)}" />
+            <button class="modal-close" type="button" onclick="fecharModal()" aria-label="Fechar">✕</button>
+          </div>
+          <div class="modal-body">
+            <h2>${escapeHTML(r.nome)}</h2>
+            <div class="modal-meta">
+              <span class="badge">${r.kcal} kcal</span>
+              <span>⏱ ${escapeHTML(r.tempo)}</span>
+              <span>🥣 ${escapeHTML(r.porcoes)}</span>
+            </div>
+            <div class="modal-section">
+              <h3>Ingredientes</h3>
+              <ul class="ingredientes">${r.ingredientes.map(i => `<li>${escapeHTML(i)}</li>`).join("")}</ul>
+            </div>
+            <div class="modal-section">
+              <h3>Modo de preparo</h3>
+              <ol>${r.preparo.map(p => `<li>${escapeHTML(p)}</li>`).join("")}</ol>
+            </div>
+          </div>
+        `);
+      } else if (tipo === "molho") {
+        const m = SM_DATA.molhos[idx];
+        abrirModal(`
+          <div class="modal-hero">
+            <img src="${escapeHTML(m.img)}" alt="${escapeHTML(m.nome)}" />
+            <button class="modal-close" type="button" onclick="fecharModal()" aria-label="Fechar">✕</button>
+          </div>
+          <div class="modal-body">
+            <h2>${escapeHTML(m.nome)}</h2>
+            <div class="modal-section">
+              <h3>Ingredientes</h3>
+              <ul class="ingredientes">${m.ingredientes.map(i => `<li>${escapeHTML(i)}</li>`).join("")}</ul>
+            </div>
+            <div class="modal-section">
+              <h3>Modo de preparo</h3>
+              <ol>${m.preparo.map(p => `<li>${escapeHTML(p)}</li>`).join("")}</ol>
+            </div>
+          </div>
+        `);
+      } else if (tipo === "bonus") {
+        const b = SM_DATA.bonus[idx];
+        abrirSubviewBonus(b);
+      } else if (tipo === "subitem") {
+        // item dentro da subview do bônus (smoothie, água, shot, lista)
+        const cat = card.dataset.cat;
+        const i = parseInt(card.dataset.idx, 10);
+        const r = SM_DATA[cat][i];
+        const isLista = cat === "listas";
+        abrirModal(`
+          <div class="modal-hero">
+            <img src="${escapeHTML(r.img)}" alt="${escapeHTML(r.nome)}" />
+            <button class="modal-close" type="button" onclick="fecharModal()" aria-label="Fechar">✕</button>
+          </div>
+          <div class="modal-body">
+            <h2>${escapeHTML(r.nome)}</h2>
+            <div class="modal-meta">
+              ${r.kcal ? `<span class="badge">${r.kcal} kcal</span>` : ''}
+              <span>⏱ ${escapeHTML(r.tempo)}</span>
+              <span>🥣 ${escapeHTML(r.porcoes)}</span>
+            </div>
+            <div class="modal-section">
+              <h3>${isLista ? 'Sobre esta lista' : 'Ingredientes'}</h3>
+              <ul class="ingredientes">${r.ingredientes.map(i => `<li>${escapeHTML(i)}</li>`).join("")}</ul>
+            </div>
+            <div class="modal-section">
+              <h3>${isLista ? 'Itens da lista' : 'Modo de preparo'}</h3>
+              <ol>${r.preparo.map(p => `<li>${escapeHTML(p)}</li>`).join("")}</ol>
+            </div>
+          </div>
+        `);
+      } else if (tipo === "outros") {
+        const o = SM_DATA.outros[idx];
+        if (!o.link) return;
+        const isVideo = /\.(mp4|webm|mov)$/i.test(o.link);
+        abrirModal(`
+          <div class="modal-body">
+            <h2 style="margin-bottom:18px">${escapeHTML(o.titulo)}</h2>
+            ${isVideo
+              ? `<video class="modal-video" controls autoplay playsinline><source src="${escapeHTML(o.link)}" type="video/mp4" /></video>`
+              : `<a href="${escapeHTML(o.link)}" target="_blank" rel="noopener" class="bonus-btn">Abrir material</a>`
+            }
+            <p style="color:var(--texto-2);font-size:.92rem;margin-top:16px">${escapeHTML(o.desc)}</p>
+            <button class="modal-close" type="button" onclick="fecharModal()" aria-label="Fechar" style="position:absolute;top:12px;right:12px">✕</button>
+          </div>
+        `);
+        // Coloca o close relativo no modal externamente
+        modalContent.style.position = "relative";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="theme-color" content="#2f6022" />
+  <title>Área de Membros · Salada de Mão</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --verde: #4a8c3a;
+      --verde-esc: #2f6022;
+      --verde-bem: #e9f1dc;
+      --areia: #faf6ed;
+      --creme: #fefcf6;
+      --texto: #1f1d18;
+      --texto-2: #4a463a;
+      --texto-3: #8a8270;
+      --borda: #e3dcc8;
+      --sombra: rgba(47, 96, 34, .1);
+      --amarelo: #f5c842;
+      --erro: #c0392b;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(180deg, var(--verde-bem), var(--areia));
+      color: var(--texto);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      box-shadow: 0 20px 60px var(--sombra);
+      padding: 36px 28px;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 18px;
+      max-width: 160px;
+      height: auto;
+      mix-blend-mode: multiply
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: 1.45rem;
+      text-align: center;
+      color: var(--verde-esc);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .sub {
+      text-align: center;
+      color: var(--texto-3);
+      font-size: .92rem;
+      margin-bottom: 24px
+    }
+
+    label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--texto-2);
+      margin-bottom: 6px;
+      margin-top: 14px
+    }
+
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1.5px solid var(--borda);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: var(--creme);
+      transition: border-color .2s, background .2s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--verde);
+      background: #fff
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px;
+      background: var(--verde-esc);
+      color: #fff;
+      border: 0;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: .02em;
+      transition: background .2s, transform .1s;
+    }
+
+    .btn:hover {
+      background: var(--verde)
+    }
+
+    .btn:active {
+      transform: scale(.98)
+    }
+
+    .erro {
+      display: none;
+      background: #fdecea;
+      color: var(--erro);
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: .88rem;
+      margin-top: 16px;
+      border-left: 3px solid var(--erro);
+    }
+
+    .erro.show {
+      display: block
+    }
+
+    .ajuda {
+      text-align: center;
+      font-size: .78rem;
+      color: var(--texto-3);
+      margin-top: 22px;
+      line-height: 1.5
+    }
+
+    .ajuda a {
+      color: var(--verde-esc);
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .hint {
+      margin-top: 18px;
+      padding: 12px 14px;
+      background: var(--verde-bem);
+      border-radius: 8px;
+      font-size: .8rem;
+      color: var(--texto-2);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .hint code {
+      background: #fff;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: 'DM Sans', monospace;
+      font-weight: 600;
+      color: var(--verde-esc);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <img src="../images/logo.jpg" alt="Salada de Mão" class="logo" />
+    <h1>Área de Membros</h1>
+    <p class="sub">Acesse suas receitas, molhos e bônus</p>
+
+    <form id="form-login" autocomplete="off" novalidate>
+      <label for="usuario">Usuário</label>
+      <input type="text" id="usuario" name="usuario" required autocomplete="username" placeholder="seu usuário" />
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" required autocomplete="current-password" placeholder="sua senha" />
+
+      <div class="erro" id="erro">Usuário ou senha incorretos.</div>
+
+      <button type="submit" class="btn">ENTRAR</button>
+    </form>
+  </main>
+
+  <script>
+    // Credenciais únicas — válidas para todos os alunos
+    const USUARIO_VALIDO = "aluno";
+    const SENHA_VALIDA = "salada2025";
+
+    const form = document.getElementById("form-login");
+    const erro = document.getElementById("erro");
+
+    // Se já logado, redireciona
+    if (sessionStorage.getItem("sm_auth") === "1") {
+      location.replace("index.html");
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const u = document.getElementById("usuario").value.trim().toLowerCase();
+      const s = document.getElementById("senha").value;
+      if (u === USUARIO_VALIDO && s === SENHA_VALIDA) {
+        sessionStorage.setItem("sm_auth", "1");
+        location.replace("index.html");
+      } else {
+        erro.classList.add("show");
+        document.getElementById("senha").value = "";
+      }
+    });
+  </script>
+</body>
+
+</html>
