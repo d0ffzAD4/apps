@@ -280,10 +280,12 @@
 
       if (vertical) {
         if (media) { var mw = h('span', 'media'); mw.appendChild(media); b.appendChild(mw); }
-        var foot = h('span', 'foot');
-        if (icon) foot.appendChild(icon);
-        foot.appendChild(label);
-        b.appendChild(foot);
+        if (label.textContent.trim() || !media) {
+          var foot = h('span', 'foot');
+          if (icon) foot.appendChild(icon);
+          foot.appendChild(label);
+          b.appendChild(foot);
+        }
       } else {
         var reverse = c.order === 'reverse';
         if (media && !reverse) { var ml = h('span', 'media side'); ml.appendChild(media); b.appendChild(ml); }

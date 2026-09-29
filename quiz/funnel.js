@@ -132,8 +132,7 @@ window.QUIZ_FUNNEL = {
         "id": "sopjkw",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/sopjkw.jpg",
          "width": 640,
          "height": 640
         },
@@ -144,8 +143,7 @@ window.QUIZ_FUNNEL = {
         "id": "mcs1t7",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/mcs1t7.jpg",
          "width": 640,
          "height": 640
         },
@@ -157,8 +155,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Idade: 56-65 anos</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/bXhpgg.jpg",
          "width": 640,
          "height": 640
         }
@@ -168,8 +165,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Idade: 65+</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/GqJ7PA.jpg",
          "width": 640,
          "height": 640
         }
@@ -291,8 +287,7 @@ window.QUIZ_FUNNEL = {
         "id": "BxHL8u",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/BxHL8u.jpg",
          "width": 178,
          "height": 178
         },
@@ -303,8 +298,7 @@ window.QUIZ_FUNNEL = {
         "id": "rmwyEC",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/rmwyEC.jpg",
          "width": 178,
          "height": 178
         },
@@ -505,8 +499,7 @@ window.QUIZ_FUNNEL = {
         "id": "8fnVmT",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/8fnVmT.jpg",
          "width": 178,
          "height": 178
         },
@@ -729,8 +722,7 @@ window.QUIZ_FUNNEL = {
         "id": "rLyoZI",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/rLyoZI.webp",
          "width": null,
          "height": null
         },
@@ -741,8 +733,7 @@ window.QUIZ_FUNNEL = {
         "id": "XNw5g0",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/XNw5g0.webp",
          "width": null,
          "height": null
         },
@@ -754,8 +745,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Barriga pochete</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/XmX4P8.png",
          "width": null,
          "height": null
         }
@@ -765,8 +755,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Com excesso de peso</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/3PYkAT.webp",
          "width": null,
          "height": null
         }
@@ -817,8 +806,7 @@ window.QUIZ_FUNNEL = {
         "id": "xrjTl1",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/xrjTl1.webp",
          "width": null,
          "height": null
         },
@@ -829,8 +817,7 @@ window.QUIZ_FUNNEL = {
         "id": "htn4ln",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/htn4ln.webp",
          "width": null,
          "height": null
         },
@@ -842,8 +829,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Médio</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/YXQV6O.webp",
          "width": null,
          "height": null
         }
@@ -853,8 +839,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Busco perder apenas alguns kg</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/8napFL.jpg",
          "width": null,
          "height": null
         }
@@ -905,8 +890,7 @@ window.QUIZ_FUNNEL = {
         "id": "VHvQlS",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/VHvQlS.png",
          "width": null,
          "height": null
         },
@@ -917,8 +901,7 @@ window.QUIZ_FUNNEL = {
         "id": "0IWp5x",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/0IWp5x.jpg",
          "width": null,
          "height": null
         },
@@ -930,8 +913,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Ganho peso facilmente, mas tenho dificuldade para perder</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/lzfO7R.jpg",
          "width": null,
          "height": null
         }
@@ -982,8 +964,7 @@ window.QUIZ_FUNNEL = {
         "id": "S0VVRE",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/S0VVRE.jpg",
          "width": null,
          "height": null
         },
@@ -994,8 +975,7 @@ window.QUIZ_FUNNEL = {
         "id": "2dWTwT",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/2dWTwT.jpg",
          "width": null,
          "height": null
         },
@@ -1007,8 +987,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Mais de 3 anos atrás</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/qYqZkd.jpg",
          "width": null,
          "height": null
         }
@@ -1018,8 +997,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Nunca</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/fKK9CD.jpg",
          "width": null,
          "height": null
         }
@@ -1071,8 +1049,7 @@ window.QUIZ_FUNNEL = {
         "id": "mLfvho",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/mLfvho.png",
          "width": null,
          "height": null
         },
@@ -1083,8 +1060,7 @@ window.QUIZ_FUNNEL = {
         "id": "8BFQrg",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/8BFQrg.png",
          "width": null,
          "height": null
         },
@@ -1096,8 +1072,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Quadris</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/ge26cx.png",
          "width": null,
          "height": null
         }
@@ -1107,8 +1082,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Pernas</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/nqxrm8.png",
          "width": null,
          "height": null
         }
@@ -1118,8 +1092,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Braços</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/03jVEn.png",
          "width": null,
          "height": null
         }
@@ -1200,8 +1173,7 @@ window.QUIZ_FUNNEL = {
         "id": "2aCIMi",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/2aCIMi.png",
          "width": 240,
          "height": 240
         },
@@ -1213,8 +1185,7 @@ window.QUIZ_FUNNEL = {
         "id": "P2yZ3L",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/P2yZ3L.png",
          "width": 240,
          "height": 240
         },
@@ -1227,8 +1198,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Pé e tornozelo</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/9LQGYE.jpg",
          "width": 1024,
          "height": 1024
         },
@@ -1651,8 +1621,7 @@ window.QUIZ_FUNNEL = {
         "id": "mzIImk",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/mzIImk.webp",
          "width": null,
          "height": null
         },
@@ -1663,8 +1632,7 @@ window.QUIZ_FUNNEL = {
         "id": "9ix3Gt",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/9ix3Gt.webp",
          "width": null,
          "height": null
         },
@@ -1737,8 +1705,7 @@ window.QUIZ_FUNNEL = {
         "id": "DGyIgI",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/DGyIgI.jpg",
          "width": null,
          "height": null
         },
@@ -1898,8 +1865,7 @@ window.QUIZ_FUNNEL = {
      "content": {
       "image": {
        "type": "image",
-       "src": null,
-       "placeholder": true,
+       "src": "img/wUcFwO.jpg",
        "width": null,
        "height": null
       },
@@ -1993,8 +1959,7 @@ window.QUIZ_FUNNEL = {
      "content": {
       "image": {
        "type": "image",
-       "src": null,
-       "placeholder": true,
+       "src": "img/hUzGAc.jpg",
        "width": null,
        "height": null
       },
@@ -2242,8 +2207,7 @@ window.QUIZ_FUNNEL = {
         "id": "6OCA6V",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/6OCA6V.jpg",
          "width": null,
          "height": null
         },
@@ -2344,8 +2308,7 @@ window.QUIZ_FUNNEL = {
         "id": "pBzX3u",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/pBzX3u.png",
          "width": null,
          "height": null
         },
@@ -2382,8 +2345,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Nenhum dos itens acima</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/3Vf6Oq.jpg",
          "width": null,
          "height": null
         }
@@ -3244,8 +3206,7 @@ window.QUIZ_FUNNEL = {
         "label": "<p>Não</p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/b2PpQC.jpg",
          "width": null,
          "height": null
         }
@@ -3451,12 +3412,11 @@ window.QUIZ_FUNNEL = {
         "id": "Y7PLPH",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/Y7PLPH.webp",
          "width": 800,
          "height": 200
         },
-        "label": "<p>3 dias por semana</p>",
+        "label": "<p><br></p>",
         "destination": "next",
         "value": "1 a 2 dias"
        },
@@ -3464,22 +3424,20 @@ window.QUIZ_FUNNEL = {
         "id": "PfGhXw",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/PfGhXw.webp",
          "width": null,
          "height": null
         },
-        "label": "<p>4 dias por semana</p>",
+        "label": "<p><br></p>",
         "destination": "next",
         "value": "3 a 5 dias"
        },
        {
         "id": "CGa8aq",
-        "label": "<p>5 dias por semana</p>",
+        "label": "<p><br></p>",
         "image": {
          "type": "image",
-         "src": null,
-         "placeholder": true,
+         "src": "img/CGa8aq.webp",
          "width": null,
          "height": null
         },
@@ -3924,8 +3882,7 @@ window.QUIZ_FUNNEL = {
      "content": {
       "image": {
        "type": "image",
-       "src": null,
-       "placeholder": true,
+       "src": "img/XXoJwL.png",
        "width": null,
        "height": null
       },
